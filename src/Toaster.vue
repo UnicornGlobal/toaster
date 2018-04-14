@@ -43,12 +43,6 @@ export default {
       toastTimeout: 3500
     }
   },
-  mounted() {
-    this.$eventBus.$on('toast', this.addToast)
-  },
-  beforeDestroy() {
-    this.$eventBus.$off('toast')
-  },
   methods: {
     addToast(toastData) {
       toastData.id = Math.ceil(Math.random() * 10000)

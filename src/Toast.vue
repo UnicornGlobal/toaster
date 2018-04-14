@@ -16,6 +16,8 @@
 </template>
 
 <style lang="scss" scoped>
+  $tabbs-pink: rgb(255, 43, 104);
+  $tabbs-green: rgb(18, 229, 13);
   .flex-success, .flex-error {
     padding: 10px 20px;
     display: flex;
@@ -66,8 +68,8 @@
 </style>
 
 <script>
-import Check from '../Icons/check.svg'
-import Danger from '../Icons/danger.svg'
+import Check from './check.svg'
+import Danger from './danger.svg'
 
 export default {
   name: 'toast',
