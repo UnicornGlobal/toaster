@@ -1,8 +1,8 @@
 {
   "name": "vue-toaster",
-  "description": "Toaster that make toasts",
+  "description": "Toaster that makes toasts",
   "version": "1.0.0",
-  "author": "Darryn Ten",
+  "author": "Bamidele Daniel",
   "private": true,
   "main": "index.js",
   "scripts": {
