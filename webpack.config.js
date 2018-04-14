@@ -26,12 +26,42 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
+        loader: 'url-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          limit: 10000,
+          name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
-      }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'vue-svg-loader',
+        options: {
+          svgo: {
+            plugins: [
+              { removeDoctype: true },
+              { removeComments: true },
+              { removeMetadata: true },
+              { removeDesc: true },
+              { removeUselessDefs: true },
+              { removeXMLNS: true },
+              { removeEditorsNSData: true },
+              { removeEmptyAttrs: true },
+              { removeHiddenmElems: true },
+              { removeEmptyText: true },
+              { removeEmptyContainers: true },
+              { minifyStyles: true },
+              { removeUnknownsAndDefaults: true },
+              { removeUselessStrokeAndFill: true },
+              { removeUnusedNS: true },
+              { removeRasterImages: true },
+              { mergePaths: true },
+              { convertShapeToPath: true },
+              { removeScriptElement: true }
+            ]
+          }
+        }
+      },
     ]
   },
   devServer: {

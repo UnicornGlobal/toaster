@@ -1,14 +1,14 @@
 <template>
   <div :class="style">
-    <div class="check">
+    <div class="toast-check">
       <check v-if="toast.type === 'success'"></check>
       <danger v-else-if="toast.type === 'error'"></danger>
     </div>
     <div>
-      <div class="header">
+      <div class="toast-header">
         <span>{{toast.title}}</span>
       </div>
-      <div class="body">
+      <div class="toast-body">
         <span>{{toast.message}}</span>
       </div>
     </div>
@@ -18,13 +18,13 @@
 <style lang="scss" scoped>
   $tabbs-pink: rgb(255, 43, 104);
   $tabbs-green: rgb(18, 229, 13);
-  .flex-success, .flex-error {
+  .flex-toast-success, .flex-toast-error {
     padding: 10px 20px;
     display: flex;
     align-items: center;
     position: relative;
 
-    .check {
+    .toast-check {
       display: flex;
       align-items: center;
       padding-right: 15px;
@@ -35,35 +35,27 @@
       }
     }
 
-    .header {
+    .toast-header {
       font-size: 18px;
       font-weight: 800;
       text-transform: uppercase;
     }
   }
 
-  .flex-success {
+  .flex-toast-success {
     background-color: lighten($tabbs-green, 35%);
 
-    .header{
+    .toast-header{
       color: $tabbs-green;
     }
   }
 
-  .flex-error {
+  .flex-toast-error {
     background-color: lighten($tabbs-pink, 35%);
 
-    .header{
+    .toast-header{
       color: $tabbs-pink;
     }
-  }
-
-  .active {
-    display: block;
-  }
-
-  .inactive {
-    display: none;
   }
 </style>
 
@@ -80,7 +72,7 @@ export default {
   props: ['toast'],
   computed: {
     style() {
-      return `flex-${this.toast.type}`
+      return `flex-toast-${this.toast.type}`
     }
   }
 }

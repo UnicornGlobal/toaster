@@ -31,6 +31,7 @@
 
 <script>
 import Toast from './Toast.vue'
+import emitter from './emitter.js'
 
 export default {
   components: {
@@ -43,12 +44,15 @@ export default {
       toastTimeout: 3500
     }
   },
+  mounted() {
+    emitter.on('addToast', this.addToast)
+  },
   methods: {
     addToast(toastData) {
       toastData.id = Math.ceil(Math.random() * 10000)
       this.toasts.push(toastData)
       setTimeout(() => {
-        this.closeToast(toastData.id)
+        // this.closeToast(toastD   ata.id)
       }, this.toastTimeout)
     },
     closeToast(toastId) {
