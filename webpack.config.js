@@ -26,11 +26,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpe?g|gif)(\?.*)?$/,
-        loader: 'url-loader',
+        test: /\.(png|jpg|gif)$/,
+        loader: 'file-loader',
         options: {
-          limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          name: '[name].[ext]?[hash]'
         }
       },
       {
