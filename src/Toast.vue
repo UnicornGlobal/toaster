@@ -16,8 +16,8 @@
 </template>
 
 <style lang="scss" scoped>
-  $tabbs-pink: rgb(255, 43, 104);
-  $tabbs-green: rgb(18, 229, 13);
+  $toast-pink: rgb(255, 43, 104);
+  $toast-green: rgb(18, 229, 13);
   .flex-toast-success, .flex-toast-error {
     padding: 10px 20px;
     display: flex;
@@ -43,18 +43,18 @@
   }
 
   .flex-toast-success {
-    background-color: lighten($tabbs-green, 35%);
+    background-color: lighten($toast-green, 35%);
 
-    .toast-header{
-      color: $tabbs-green;
+    .toast-header {
+      color: $toast-green;
     }
   }
 
   .flex-toast-error {
-    background-color: lighten($tabbs-pink, 35%);
+    background-color: lighten($toast-pink, 35%);
 
     .toast-header{
-      color: $tabbs-pink;
+      color: $toast-pink;
     }
   }
 </style>
@@ -77,4 +77,3 @@ export default {
   }
 }
 </script>
-
