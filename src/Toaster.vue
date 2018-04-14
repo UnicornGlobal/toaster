@@ -47,12 +47,15 @@ export default {
   mounted() {
     emitter.on('addToast', this.addToast)
   },
+  beforeDestroy() {
+    emitter.removeListener('addToast')
+  },
   methods: {
     addToast(toastData) {
       toastData.id = Math.ceil(Math.random() * 10000)
       this.toasts.push(toastData)
       setTimeout(() => {
-        // this.closeToast(toastD   ata.id)
+        this.closeToast(toastData.id)
       }, this.toastTimeout)
     },
     closeToast(toastId) {
