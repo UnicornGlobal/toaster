@@ -32,7 +32,8 @@ describe('Toast.vue', () => {
         toast: {
           type: 'success',
           title: 'Success',
-          message: 'Items added successfully'
+          message: 'Items added successfully',
+          timeOut: 3500
         }
       }
     })
