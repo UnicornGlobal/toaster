@@ -48,7 +48,7 @@ export default {
     emitter.on('addToast', this.addToast)
   },
   beforeDestroy() {
-    emitter.removeListener('addToast')
+    emitter.removeListener('addToast', this.addToast)
   },
   methods: {
     addToast(toastData) {
