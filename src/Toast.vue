@@ -21,22 +21,21 @@
 </template>
 
 <style lang="scss" scoped>
-  $toast-blue-5: rgb(126, 161, 255);
-  $toast-blue: rgb(210,236,241);
-  $toast-yellow: rgb(255,243,207);
-  $toast-pink: rgb(255, 43, 104);
-  $toast-green: rgb(18, 229, 13);
+  $toast-info: rgb(210,236,241);
+  $toast-warning: rgb(255,243,207);
+  $toast-error: rgb(255, 43, 104);
+  $toast-success: rgb(18, 229, 13);
   .line {
     height: 3px;
     animation: fade 3.5s linear;
   }
 
   .error {
-    background-color: $toast-pink;
+    background-color: $toast-error;
   }
 
   .success {
-    background-color: $toast-green;
+    background-color: $toast-success;
   }
 
   .info {
@@ -77,15 +76,15 @@
   }
 
   .flex-toast-success {
-    background-color: lighten($toast-green, 35%);
+    background-color: lighten($toast-success, 35%);
 
     .toast-header {
-      color: $toast-green;
+      color: $toast-success;
     }
   }
 
   .flex-toast-warning {
-    background-color: $toast-yellow;
+    background-color: $toast-warning;
 
     .toast-header {
       color: #856404;
@@ -93,7 +92,7 @@
   }
 
   .flex-toast-info {
-    background-color: $toast-blue;
+    background-color: $toast-info;
 
     .toast-header {
       color: #0c5460;
@@ -101,10 +100,10 @@
   }
 
   .flex-toast-error {
-    background-color: lighten($toast-pink, 35%);
+    background-color: lighten($toast-error, 35%);
 
     .toast-header{
-      color: $toast-pink;
+      color: $toast-error;
     }
   }
 
@@ -138,6 +137,7 @@ export default {
         const timer = parseInt(this.toast.timeOut, 10) / 1000
         return `animation-duration: ${timer}s`
       }
+
       return ''
     }
   }
