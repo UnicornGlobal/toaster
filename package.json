@@ -1,9 +1,10 @@
 {
   "name": "vue-toaster",
-  "description": "Toaster that makes toasts",
+  "description": "A toaster that makes toast",
   "version": "1.0.0",
-  "author": "Bamidele Daniel",
-  "private": true,
+  "author": "Bamidele Daniel, Darryn Ten",
+  "private": false,
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
