@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events'
 
-class MyEmitter extends EventEmitter {}
+class ToastEmitter extends EventEmitter {}
 
-export default new MyEmitter()
+export default new ToastEmitter()
