@@ -1,2 +1,6 @@
 import Toaster from './src/Toaster.vue'
-export default Toaster
+import ToasterEvents from './src/ToasterEvents.js'
+export {
+  Toaster,
+  ToasterEvents
+}
