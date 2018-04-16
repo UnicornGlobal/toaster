@@ -14,6 +14,7 @@ npm install --save vue-toaster
 ## Setup
 
 In your `main.js` file,
+
 ```
 import { ToasterEvents } from 'vue-toaster'
 ```
@@ -28,6 +29,7 @@ Vue.prototype.$toaster = ToasterEvents
 Import the `Toaster` component in your App.vue and configure it using the example below
 
 `App.vue`
+
 ```
 <template>
   <div id="app">
@@ -57,6 +59,7 @@ The Toaster can be called anywhere in your app by doing `this.$toaster.addToast(
 Here is an example.
 
 `Test.vue`
+
 ```
 <script>
   export default {
@@ -77,6 +80,7 @@ Here is an example.
   }
 </script>
 ```
+
 This will display an error toast with the message to the user.
 
 ### Advanced
@@ -92,6 +96,7 @@ E.g.
     timeOut: 5000
   })
 ```
+
 ## Details
 
 It displays a toast depending on the type specified in the toast options. It makes use of an `EventEmitter` behind the scene and it emits an event whenever the `addToast` method is called. The toast is then added to an array of toasts; gets displayed on the screen and removed from the araay after the timeout. The default `timeOut` of a toast is `3500` (3.5s) and it can be configure to be higher or lower.
