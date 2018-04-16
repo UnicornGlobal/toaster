@@ -1,15 +1,18 @@
 <template>
-  <div :class="style">
-    <div class="toast-check">
-      <check v-if="toast.type === 'success'"></check>
-      <danger v-else-if="toast.type === 'error'"></danger>
-    </div>
-    <div>
-      <div class="toast-header">
-        <span>{{toast.title}}</span>
+  <div>
+    <div class="line" :class="toast.type" :style="animationDuration"></div>
+    <div :class="style">
+      <div class="toast-check">
+        <check v-if="toast.type === 'success'"></check>
+        <danger v-else-if="toast.type === 'error'"></danger>
       </div>
-      <div class="toast-body">
-        <span>{{toast.message}}</span>
+      <div>
+        <div class="toast-header">
+          <span>{{toast.title}}</span>
+        </div>
+        <div class="toast-body">
+          <span>{{toast.message}}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -18,6 +21,19 @@
 <style lang="scss" scoped>
   $toast-pink: rgb(255, 43, 104);
   $toast-green: rgb(18, 229, 13);
+  .line {
+    height: 3px;
+    animation: fade 3.5s linear;
+  }
+
+  .error {
+    background-color: $toast-pink;
+  }
+
+  .success {
+    background-color: $toast-green;
+  }
+
   .flex-toast-success, .flex-toast-error {
     padding: 10px 20px;
     display: flex;
@@ -57,6 +73,14 @@
       color: $toast-pink;
     }
   }
+
+  @keyframes fade {
+    0%   {width: 100%;}
+    25%  {width: 75%;}
+    50%  {width: 50%;}
+    75%  {width: 25%;}
+    100% {width: 0%;}
+  }
 </style>
 
 <script>
@@ -73,6 +97,13 @@ export default {
   computed: {
     style() {
       return `flex-toast-${this.toast.type}`
+    },
+    animationDuration() {
+      if (this.toast.timeOut) {
+        const timer = parseInt(this.toast.timeOut, 10) / 1000
+        return `animation-duration: ${timer}s`
+      }
+      return ''
     }
   }
 }

@@ -53,10 +53,11 @@ export default {
   methods: {
     addToast(toastData) {
       toastData.id = Math.ceil(Math.random() * 10000)
+      const timeout = toastData.timeOut || this.toastTimeout
       this.toasts.push(toastData)
       setTimeout(() => {
         this.closeToast(toastData.id)
-      }, this.toastTimeout)
+      }, timeout)
     },
     closeToast(toastId) {
       const newToasts = this.toasts.filter(toast => toast.id !== toastId)
