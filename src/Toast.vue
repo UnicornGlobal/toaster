@@ -110,9 +110,6 @@
 
   @keyframes fade {
     0%   {width: 100%;}
-    25%  {width: 75%;}
-    50%  {width: 50%;}
-    75%  {width: 25%;}
     100% {width: 0%;}
   }
 </style>
