@@ -15,7 +15,7 @@
     "node-sass": "^4.8.3",
     "sass-loader": "^7.0.1",
     "sinon": "^4.5.0",
-    "vue": "^2.4.4",
+    "vue": "^2.5.17",
     "vue-svg-loader": "^0.5.0"
   },
   "devDependencies": {
