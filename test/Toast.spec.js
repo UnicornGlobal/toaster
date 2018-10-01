@@ -1,5 +1,5 @@
 import Toast from '../src/Toast.vue'
-import { createLocalVue, shallow } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 
 describe('Toast.vue', () => {
   it('is an Object', () => {
@@ -8,7 +8,7 @@ describe('Toast.vue', () => {
 
   it('displays error toast', () => {
     const localVue = createLocalVue()
-    const page = shallow(Toast, {
+    const page = shallowMount(Toast, {
       localVue,
       propsData: {
         toast: {
@@ -26,7 +26,7 @@ describe('Toast.vue', () => {
 
   it('displays success toast', () => {
     const localVue = createLocalVue()
-    const page = shallow(Toast, {
+    const page = shallowMount(Toast, {
       localVue,
       propsData: {
         toast: {

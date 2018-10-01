@@ -1,7 +1,7 @@
 import Toaster from '../src/Toaster.vue'
 import emitter from '../src/emitter'
 import sinon from 'sinon'
-import { createLocalVue, shallow } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 
 describe('Toaster.vue', () => {
   it('is an Object', () => {
@@ -12,7 +12,7 @@ describe('Toaster.vue', () => {
     const localVue = createLocalVue()
     const spy = sinon.spy(Toaster.methods, 'addToast')
     const spy2 = sinon.spy(Toaster.methods, 'closeToast')
-    const wrapper = shallow(Toaster, {
+    const wrapper = shallowMount(Toaster, {
       localVue
     })
     emitter.emit('addToast', {
@@ -21,11 +21,9 @@ describe('Toaster.vue', () => {
       message: 'Item could not be added'
     })
     expect(spy.called).toBe(true)
-    wrapper.update()
     expect(wrapper.vm.toasts.length).toBe(1)
     setTimeout(() => {
       expect(spy2.called).toBe(true)
-      wrapper.update()
       expect(wrapper.vm.toasts.length).toBe(0)
       done()
     }, 4000)
@@ -34,7 +32,7 @@ describe('Toaster.vue', () => {
   it('removes eventListener on page destroy', () => {
     const localVue = createLocalVue()
     const spy = sinon.spy(emitter, 'removeListener')
-    const wrapper = shallow(Toaster, {
+    const wrapper = shallowMount(Toaster, {
       localVue
     })
     wrapper.destroy()
