@@ -3,12 +3,12 @@ const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/main.js',
   mode: 'development',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    publicPath: './',
+    filename: 'index.js'
   },
   resolve: {
     alias: {
