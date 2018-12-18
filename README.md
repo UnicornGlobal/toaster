@@ -1,14 +1,11 @@
-# vue-toaster
-
-[![Build Status](https://travis-ci.com/darrynten/vue-toaster.svg?token=2azvxgpyzAkLb1UEKNft&branch=dev)](https://travis-ci.com/darrynten/vue-toaster)
-[![codecov](https://codecov.io/gh/darrynten/vue-toaster/branch/dev/graph/badge.svg?token=gkxihPWHlk)](https://codecov.io/gh/darrynten/vue-toaster)
+# @unicorns/toaster
 
 > A toaster that makes toast
 
 ## Installation
 
 ```
-npm install --save vue-toaster
+npm install --save @unicorns/toaster
 ```
 
 ## Setup
@@ -16,7 +13,7 @@ npm install --save vue-toaster
 In your `main.js` file,
 
 ```
-import { ToasterEvents } from 'vue-toaster'
+import { ToasterEvents } from '@unicorns/toaster'
 ```
 
 Add the toaster events to your vue instance as shown below:
@@ -41,7 +38,7 @@ Import the `Toaster` component in your App.vue and configure it using the exampl
 
 <script>
   import HelloWorld from './components/HelloWorld'
-  import { Toaster } from 'vue-toaster
+  import { Toaster } from '@unicorns/toaster'
 
   export default {
     name: 'App',
