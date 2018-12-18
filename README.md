@@ -1,8 +1,5 @@
 # @unicorns/toaster
 
-[![Build Status](https://travis-ci.com/darrynten/vue-toaster.svg?token=2azvxgpyzAkLb1UEKNft&branch=dev)](https://travis-ci.com/darrynten/vue-toaster)
-[![codecov](https://codecov.io/gh/darrynten/vue-toaster/branch/dev/graph/badge.svg?token=gkxihPWHlk)](https://codecov.io/gh/darrynten/vue-toaster)
-
 > A toaster that makes toast
 
 ## Installation
@@ -41,7 +38,7 @@ Import the `Toaster` component in your App.vue and configure it using the exampl
 
 <script>
   import HelloWorld from './components/HelloWorld'
-  import { Toaster } from 'vue-toaster
+  import { Toaster } from '@unicorns/toaster'
 
   export default {
     name: 'App',
