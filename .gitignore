@@ -6,6 +6,7 @@ yarn-error.log
 .tmp
 .nyc_output
 coverage
+index.js
 
 # Editor directories and files
 .idea
