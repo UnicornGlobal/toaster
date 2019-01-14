@@ -1,7 +1,7 @@
 {
   "name": "@unicorns/toaster",
   "description": "A toaster that makes toast",
-  "version": "1.3.23",
+  "version": "1.3.24",
   "author": "Unicorn Global et al",
   "private": false,
   "license": "MIT",
