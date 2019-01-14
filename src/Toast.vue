@@ -83,10 +83,7 @@ export default {
       return `background: ${this.$toaster.theme[this.toast.type]['light']}; width: ${this.$toaster.theme.width};`
     },
     lineStyle() {
-      let timer = '3.5'
-      if (this.$toaster.timeout) {
-        timer = parseInt(this.$toaster.timeout, 10) / 1000
-      }
+      let timer = parseInt(this.$toaster.timeout, 10) / 1000
 
       if (this.toast.timeout) {
         timer = parseInt(this.toast.timeout, 10) / 1000

@@ -28,7 +28,9 @@ describe('Toast.vue', () => {
 
   it('displays info toast', () => {
     const localVue = createLocalVue()
-    localVue.use(Toaster)
+    localVue.use(Toaster, {
+      timeout: 500
+    })
     const page = shallowMount(Toast, {
       localVue,
       propsData: {
@@ -54,7 +56,8 @@ describe('Toast.vue', () => {
         toast: {
           type: 'warning',
           title: 'Warning',
-          message: 'Warning could not be added'
+          message: 'Warning could not be added',
+          timeout: 200
         }
       }
     })
