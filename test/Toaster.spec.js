@@ -1,4 +1,5 @@
 import Toaster from '../src/Toaster.vue'
+import Installer from '../src/main.js'
 import emitter from '../src/emitter'
 import sinon from 'sinon'
 import { createLocalVue, shallowMount } from '@vue/test-utils'
@@ -10,6 +11,7 @@ describe('Toaster.vue', () => {
 
   it('responds to events and add new toast', (done) => {
     const localVue = createLocalVue()
+    localVue.use(Installer)
     const spy = sinon.spy(Toaster.methods, 'addToast')
     const spy2 = sinon.spy(Toaster.methods, 'closeToast')
     const wrapper = shallowMount(Toaster, {
@@ -31,6 +33,7 @@ describe('Toaster.vue', () => {
 
   it('removes eventListener on page destroy', () => {
     const localVue = createLocalVue()
+    localVue.use(Installer)
     const spy = sinon.spy(emitter, 'removeListener')
     const wrapper = shallowMount(Toaster, {
       localVue

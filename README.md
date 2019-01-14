@@ -90,7 +90,7 @@ E.g.
     type: 'info',
     title: 'Secret Key',
     message: 'Please configure your secret key in the security section of the     dashboard.',
-    timeOut: 5000
+    timeout: 5000
   })
 ```
 

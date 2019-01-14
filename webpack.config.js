@@ -8,7 +8,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './'),
     publicPath: './',
-    filename: 'index.js'
+    filename: 'index.js',
+    libraryTarget: 'umd',
+    library: '@unicorns/toaster',
+    umdNamedDefine: true
   },
   resolve: {
     alias: {
