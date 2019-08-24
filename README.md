@@ -90,7 +90,7 @@ E.g.
     type: 'info',
     title: 'Secret Key',
     message: 'Please configure your secret key in the security section of the     dashboard.',
-    timeOut: 5000
+    timeout: 5000
   })
 ```
 
@@ -102,6 +102,17 @@ It displays a toast depending on the type specified in the toast options. It mak
 
 - [ ] - Enable users to configure toast colors
 
+# Version History
+
+v1.x is now deprecated and no longer supported.
+
+v2.x is the latest version and is not backwards compatible with
+applications currently using v1.x.
+
+Ensure you test your application sufficiently before updating the version
+from 1.x to 2.x
+
 # Contributors
 
+[Darryn Ten](https://github.com/darrynten)
 [Bamidele Daniel](https://github.com/humanityjs)

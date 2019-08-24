@@ -37,11 +37,10 @@ export default {
   components: {
     Toast
   },
-  name: 'toaster',
   data() {
     return {
       toasts: [],
-      toastTimeout: 3500
+      toastTimeout: this.$toaster.timeout
     }
   },
   mounted() {
