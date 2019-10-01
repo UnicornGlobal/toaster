@@ -7,8 +7,13 @@ import Info from './info.svg'
 import Warning from './warning.svg'
 
 Toaster.install = function(Vue, options = {}) {
+  var timeout = 3500
+  if (options.timeout) {
+    timeout = options.timeout
+  }
+
   Vue.prototype.$toaster = ToasterEvents
-  Vue.prototype.$toaster.timeout = 3500
+  Vue.prototype.$toaster.timeout = timeout
   Vue.prototype.$toaster.theme = {
     success: {
       light: '#d7eac1',
@@ -31,10 +36,6 @@ Toaster.install = function(Vue, options = {}) {
       icon: Info
     },
     width: '250px'
-  }
-
-  if (options.timeout) {
-    Vue.prototype.$toaster.timeout = options.timeout
   }
 
   if (options.theme) {

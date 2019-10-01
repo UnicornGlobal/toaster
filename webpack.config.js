@@ -5,6 +5,12 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
   entry: './src/main.js',
   mode: 'development',
+  optimization: {
+    minimize: true,
+    removeAvailableModules: true,
+    providedExports: true,
+    usedExports: true
+  },
   output: {
     path: path.resolve(__dirname, './'),
     publicPath: './',
@@ -12,6 +18,9 @@ module.exports = {
     libraryTarget: 'umd',
     library: '@unicorns/toaster',
     umdNamedDefine: true
+  },
+  externals: {
+    events: 'events'
   },
   resolve: {
     alias: {
